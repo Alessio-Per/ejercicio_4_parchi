@@ -1,0 +1,1255 @@
+body {
+    font-size: 16px;
+    min-width: 150px; 
+    margin: 3vw 0 0 0; /* Ajusta esto según la altura de tu navbar */
+    padding: 0;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    width: 100%;
+    height: 100vh; /* Ocupa todo el alto de la pantalla */
+    box-sizing: border-box; /* Asegura que padding no se sume al ancho */
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+/* Navbar Section */
+
+.navbar_container {
+    display: flex; /* Utilizamos Flexbox para la barra de navegación */
+    justify-content: space-between;
+    align-items: center; /* Alineación vertical centrada */
+    padding: 1% 2%; /* Ajuste de padding */
+    width: 100%; /* Aseguramos que el contenedor ocupe todo el ancho */
+    transition: all 0.3s ease; /* Transición suave para cambios de tamaño */
+    min-width: 300px; /* Evita que la navbar se encoja menos de 300px */
+    gap: 3%;
+
+    /* Fija la navbar en la parte superior */
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+    background-color: #fff; /* Asegura que tenga un fondo (si es necesario) */
+    box-shadow: 0 4px 2px -2px gray; /* Agrega una sombra sutil debajo para separarla del contenido */
+}
+
+/* Estilo para los enlaces de la izquierda */
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    padding-right: 3%;
+    gap: 3vw;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para el logo */
+.logo_navbar {
+    max-width: 180px; /* Ajusta el tamaño máximo del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+@media (max-width:430px) {
+    .navbar_container {
+        flex-direction: flex; /* En pantallas pequeñas, cambia la dirección del flex a columna */
+        justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+        align-items: center; /* Alinea los elementos en el centro */
+    }
+
+    .navbar_container img {
+        max-width: 90%; /* Limita el máximo a 100% */
+        height: auto; /* Mantén la proporción de la imagen */
+    }
+
+    .logo_navbar {
+        width: 30px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+        height: auto; /* Asegúrate de que el logo mantenga su proporción */
+    }
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* Portada principal Section */
+
+.info_copertina {
+    margin: 0 auto; /* per centrare quel contenitore nella pagina */
+    padding: 0; /* Elimina cualquier padding que pueda interferir */
+    min-width: 300px; /* Evita que la navbar se encoja menos de 300px */
+    position: relative; /* Esto nos permite posicionar elementos encima de la imagen */
+}
+  
+.image_copertina img {
+      width: 100%;      
+      height: auto;      /* Mantiene la relación de aspecto de la imagen */
+      height: auto;      
+      display: block;    
+      object-fit: cover;
+}
+  
+  
+/* Contenedor de texto sobre la imagen */
+  
+.overlay {
+    position: absolute; /* Se coloca encima de la imagen */
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%; /* Alinea el texto a la izquierda */
+    transform: translate(-50%, -50%); /* Centra el texto de arriba hacia abajo */
+    color: white; /* Hace el texto blanco para contrastar con la imagen */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 20px;
+    width: auto; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box;
+}
+  
+  
+/* Título */
+  
+.titulo_imagen {
+    font-family: 'Mohave', sans-serif;
+    font-weight: 700; /* Negrita */
+    font-size: 6vw; /* Tamaño del título */
+    margin: 0; /* Elimina margen */
+    padding: 1vw 2vw; /* Padding para el fondo */
+    background-color: #FE8205; /* Color de fondo del título */
+    color: white; /* Texto blanco */
+    border-radius: 5px; /* Redondea las esquinas */
+    display: inline-block; /* Ajusta el tamaño del fondo al tamaño del texto */
+}
+  
+/* Subtítulo */
+  
+.subtitulo_imagen {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 2.5vw; /* Tamaño de fuente para el subtítulo */
+    font-family: 'Helvetica', sans-serif;
+    margin-top: 10px; /* Espacio entre el título y los subtítulos */
+    margin-bottom: 2%;
+    padding-left: 0; /* Agrega algo de espacio a la izquierda para que no se alineen directamente al borde */
+    color: white; /* Blanco para contraste con la imagen */
+    background: none; /* Asegura que no tenga fondo */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+  
+  
+/* Media Queries para pantallas más pequeñas */
+  
+@media (max-width: 768px) {
+  
+    .titulo_imagen {
+        font-size: 6vw; /* Reduce el tamaño del título en pantallas más pequeñas */
+        padding: 1vw 2vw; /* Ajusta el padding para pantallas pequeñas */
+    }
+    
+    .subtitulo_imagen {
+        font-size: 2.5vw; /* Reduce el tamaño del subtítulo en pantallas más pequeñas */
+        margin-top: 10px; /* Ajusta el margen superior */
+    }
+    
+    .overlay {
+        top: 40%; /* Ajusta la posición del texto */
+        left: 50%; /* Ajusta la posición del texto */
+        transform: translateX(-50%); /* Mantiene centrado */
+    }
+}
+    
+@media (max-width: 480px) {
+  
+    .titulo_imagen {
+        font-size: 6vw;        /* Ajusta el tamaño en pantallas aún más pequeñas */
+        padding: 1vw 2vw;     /* Reduce el padding */
+    }
+    
+    .subtitulo_imagen {
+        font-size: 2.5vw; /* Ajusta el tamaño en pantallas más pequeñas */
+    }
+    
+    .overlay {
+        top: 40%; /* Ajusta aún más la posición del texto */
+        left: 50%; /* Ajusta la posición del texto */
+        transform: translateX(-50%); /* Mantiene centrado */
+    }
+}
+  
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */   
+
+
+
+/* Texto introductorio debajo de la imagen */
+
+.texto_introductorio {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.5vw; /* Tamaño de fuente para el texto introductorio */
+    color: black; /* Color de texto */
+    margin-top: 20px; /* Espacio superior */
+    text-align: left; /* Alinea el texto a la derecha */
+    width: 60%; /* Limita el ancho para que no se extienda demasiado */
+    margin-left: auto;
+    margin-right: auto; /* Alineado a la derecha */
+    padding-right: 2%; /* Agrega padding para que no se pegue al borde */
+    box-sizing: border-box; /* Para incluir el padding dentro del cálculo del ancho */ 
+}      
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+/* Portada principal Section para paginas con imagenes largas */
+
+.info_copertina2 {
+    margin: 0 auto; /* per centrare quel contenitore nella pagina */
+    padding: 0; /* Elimina cualquier padding que pueda interferir */
+    min-width: 300px; /* Evita que la navbar se encoja menos de 300px */
+    position: relative; /* Esto nos permite posicionar elementos encima de la imagen */
+}
+  
+.image_copertina2 img {
+      width: 100%;      
+      height: auto;      /* Mantiene la relación de aspecto de la imagen */
+      height: auto;      
+      display: block;    
+      object-fit: cover;
+}
+  
+
+
+
+/* Contenedor de texto sobre la imagen para paginas con imagen largas */
+  
+.overlay2 {
+    position: absolute; /* Se coloca encima de la imagen */
+    top: 50%; /* Centra el texto verticalmente */
+    left: 50%; /* Alinea el texto a la izquierda */
+    transform: translate(-50%, -50%); /* Centra el texto de arriba hacia abajo */
+    color: white; /* Hace el texto blanco para contrastar con la imagen */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    padding: 20px;
+    width: auto; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box;
+}
+  
+  
+/* Título */
+  
+.titulo_imagen2 {
+    font-family: 'Mohave', sans-serif;
+    font-weight: 700; /* Negrita */
+    font-size: 4vw; /* Tamaño del título */
+    margin: 0; /* Elimina margen */
+    padding: 1vw 2vw; /* Padding para el fondo */
+    background-color: #FE8205; /* Color de fondo del título */
+    color: white; /* Texto blanco */
+    border-radius: 5px; /* Redondea las esquinas */
+    display: inline-block; /* Ajusta el tamaño del fondo al tamaño del texto */
+}
+  
+/* Subtítulo */
+  
+.subtitulo_imagen2 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.5vw; /* Tamaño de fuente para el subtítulo */
+    font-family: 'Helvetica', sans-serif;
+    margin-top: 10px; /* Espacio entre el título y los subtítulos */
+    margin-bottom: 2%;
+    padding-left: 0; /* Agrega algo de espacio a la izquierda para que no se alineen directamente al borde */
+    color: white; /* Blanco para contraste con la imagen */
+    background: none; /* Asegura que no tenga fondo */
+    text-align: center; /* Centra el texto dentro del contenedor */
+}
+  
+  
+/* Media Queries para pantallas más pequeñas */
+  
+@media (max-width: 768px) {
+  
+    .titulo_imagen2 {
+        font-size: 6vw; /* Reduce el tamaño del título en pantallas más pequeñas */
+        padding: 1vw 2vw; /* Ajusta el padding para pantallas pequeñas */
+    }
+    
+    .subtitulo_imagen2 {
+        font-size: 2.5vw; /* Reduce el tamaño del subtítulo en pantallas más pequeñas */
+        margin-top: 10px; /* Ajusta el margen superior */
+    }
+    
+    .overlay2 {
+        top: 40%; /* Ajusta la posición del texto */
+        left: 50%; /* Ajusta la posición del texto */
+        transform: translateX(-50%); /* Mantiene centrado */
+    }
+}
+    
+@media (max-width: 480px) {
+  
+    .titulo_imagen2 {
+        font-size: 6vw;        /* Ajusta el tamaño en pantallas aún más pequeñas */
+        padding: 1vw 2vw;     /* Reduce el padding */
+    }
+    
+    .subtitulo_imagen2 {
+        font-size: 2.5vw; /* Ajusta el tamaño en pantallas más pequeñas */
+    }
+    
+    .overlay2 {
+        top: 40%; /* Ajusta aún más la posición del texto */
+        left: 50%; /* Ajusta la posición del texto */
+        transform: translateX(-50%); /* Mantiene centrado */
+    }
+}
+  
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */   
+
+
+
+
+
+/* Esplora i parchi d’Italia */
+
+.info_contenitore_reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 20px; /* Espacio entre las columnas */
+    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 2%; /* Ajuste de padding */
+    flex-direction: row-reverse; /* Esto invierte el orden de las columnas */
+    box-sizing: border-box;
+}
+
+.contenitore_texto_reverse {
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
+    max-width: 100%; /* Limita el ancho máximo del contenedor del texto */
+    padding: 0 10%; /* Añade un poco de padding a los lados */
+    text-align: left; /* Alinea el texto hacia la derecha */
+    height: auto; /* Ajusta la altura al contenido */
+    overflow: visible; /* Asegura que el texto no se oculte */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-top: -40%; /* Sube el texto hacia arriba */
+    margin-left: -10%; /* Mueve el texto hacia la izquierda */
+
+}
+
+.title_1_reverse {
+    font-size: 4rem; /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+    font-family: 'Mohave', sans-serif;  /* Aplica la fuente "Mohave" */
+    font-weight: bold; /* Hace el título en negrita */
+    background-color: #00A2E2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Ajuste de padding */
+    border-radius: 5px; /* Redondeo de bordes */
+    display: inline-block; /* Permite que el rectángulo sea ajustado al tamaño del texto */
+}
+
+.contenitore_texto_reverse p {
+    font-family: 'Helvetica', sans-serif; /* Aplica Helvetica, y usa una fuente sans-serif si no está disponible */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    margin-bottom: 20px; /* Añade espacio entre los párrafos */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}
+
+
+/* Estilo para el texto adicional, que actúa como un botón */
+.texto_adicional {
+    font-family: 'Helvetica', sans-serif; /* Asegura la misma fuente */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #B23251; /* Color inicial del texto */
+    margin-top: 5px; /* Espacio por encima del texto adicional */
+    cursor: pointer; /* Hace que el cursor sea un puntero para indicar que es clickeable */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: inline-block; /* Para que sea tratado como un bloque de contenido, si se quiere aplicar padding */
+}
+
+/* Estilo cuando se pasa el mouse por encima (hover) */
+.texto_adicional:hover {
+    color: #9e1f3d; /* Un color más oscuro que el color inicial */
+}
+
+
+
+.image_section_reverse img {
+    max-width: 60%; /* La imagen ocupa el 100% del ancho disponible */
+    width: 100%; /* La imagen ocupa el 100% del ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Cubre el contenedor sin deformar la imagen */
+    padding: 0; /* Elimina el padding */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+    box-sizing: border-box; /* Evita el desbordamiento por el padding */
+    border-radius: 25px; /* Bordes redondeados con un radio de 25px */
+    margin-left: 35%; /* Mueve la imagen hacia la derecha */
+}
+
+
+
+/* Media Query para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .info_contenitore_reverse {
+        grid-template-columns: 1fr; /* Los elementos se apilan en una sola columna */
+        padding: 2%; /* Agrega un pequeño padding en pantallas pequeñas */
+    }
+
+    .image_section_reverse img {
+        max-width: 100%; /* Asegura que la imagen ocupe el 100% del ancho disponible */
+        object-fit: contain; /* La imagen se ajusta sin recortarse */
+    }
+
+    .contenitore_texto_reverse {
+        padding: 0 10%; /* Ajusta el padding si es necesario */
+    }
+
+    .title_1_reverse {
+        font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .contenitore_texto_reverse p {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* Contenedor contrario al de arriba */
+
+.info_contenitore_reverse2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 20px; /* Espacio entre las columnas */
+    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 2%; /* Ajuste de padding */
+    box-sizing: border-box;
+}
+
+/* Contenedor de la imagen */
+.image_section_reverse2 img {
+    width: 100%; /* La imagen ocupa el 100% del ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Cubre el contenedor sin deformar la imagen */
+    padding: 0; /* Elimina el padding */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+    border-radius: 25px; /* Bordes redondeados con un radio de 25px */
+}
+
+/* Contenedor de texto */
+
+.contenitore_texto_reverse2 {
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
+    max-width: 100%; /* Limita el ancho máximo del contenedor del texto */
+    padding: 0 10%; /* Añade un poco de padding a los lados */
+    text-align: left; /* Alinea el texto hacia la izquierda */
+    height: auto; /* Ajusta la altura al contenido */
+    overflow: visible; /* Asegura que el texto no se oculte */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-top: -30%; /* Sube el texto hacia arriba */
+    margin-left: 20%; /* Mueve el texto hacia la izquierda */
+}
+
+/* Estilo para el título */
+.title_1_reverse2 {
+    font-size: 4rem; /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+    font-family: 'Mohave', sans-serif;  /* Aplica la fuente "Mohave" */
+    font-weight: bold; /* Hace el título en negrita */
+    background-color: #00A2E2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Ajuste de padding */
+    border-radius: 5px; /* Redondeo de bordes */
+    display: inline-block; /* Permite que el rectángulo sea ajustado al tamaño del texto */
+}
+
+.contenitore_texto_reverse2 p {
+    font-family: 'Helvetica', sans-serif; /* Aplica Helvetica, y usa una fuente sans-serif si no está disponible */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    margin-bottom: 20px; /* Añade espacio entre los párrafos */
+    margin-right: 30%;
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+}
+
+
+
+/* Estilo para el texto adicional, que actúa como un botón */
+.texto_adicional2 {
+    font-family: 'Helvetica', sans-serif; /* Asegura la misma fuente */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #B23251; /* Color inicial del texto */
+    margin-top: 5px; /* Espacio por encima del texto adicional */
+    cursor: pointer; /* Hace que el cursor sea un puntero para indicar que es clickeable */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: inline-block; /* Para que sea tratado como un bloque de contenido, si se quiere aplicar padding */
+}
+
+/* Estilo cuando se pasa el mouse por encima (hover) */
+.texto_adicional2:hover {
+    color: #9e1f3d; /* Un color más oscuro que el color inicial */
+}
+
+
+
+.image_section_reverse2 img {
+    max-width: 60%; /* La imagen ocupa el 100% del ancho disponible */
+    width: 100%; /* La imagen ocupa el 100% del ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Cubre el contenedor sin deformar la imagen */
+    padding: 0; /* Elimina el padding */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+    box-sizing: border-box; /* Evita el desbordamiento por el padding */
+    border-radius: 25px; /* Bordes redondeados con un radio de 25px */
+    margin-right: 35%; /* Mueve la imagen hacia la derecha */
+}
+
+
+
+/* Media Query para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .info_contenitore_reverse2 {
+        grid-template-columns: 1fr; /* Los elementos se apilan en una sola columna */
+        padding: 2%; /* Agrega un pequeño padding en pantallas pequeñas */
+    }
+
+    .image_section_reverse2 img {
+        max-width: 100%; /* Asegura que la imagen ocupe el 100% del ancho disponible */
+        object-fit: contain; /* La imagen se ajusta sin recortarse */
+    }
+
+    .contenitore_texto_reverse2 {
+        padding: 0 10%; /* Ajusta el padding si es necesario */
+    }
+
+    .title_1_reverse2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .contenitore_texto_reverse2 p {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+    }
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+/* Attività */
+
+.info_contenitore_reverse3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide en dos columnas iguales */
+    gap: 20px; /* Espacio entre las columnas */
+    align-items: center; /* Alinea los elementos verticalmente */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 2%; /* Ajuste de padding */
+    flex-direction: row-reverse; /* Esto invierte el orden de las columnas */
+    box-sizing: border-box;
+}
+
+.contenitore_texto_reverse3 {
+    width: 100%; /* Asegura que ocupe todo el espacio disponible */
+    max-width: 100%; /* Limita el ancho máximo del contenedor del texto */
+    padding: 0 10%; /* Añade un poco de padding a los lados */
+    text-align: left; /* Alinea el texto hacia la derecha */
+    height: auto; /* Ajusta la altura al contenido */
+    overflow: visible; /* Asegura que el texto no se oculte */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    margin-top: -40%; /* Sube el texto hacia arriba */
+    margin-left: -10%; /* Mueve el texto hacia la izquierda */
+
+}
+
+.title_1_reverse3 {
+    font-size: 4rem; /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+    font-family: 'Mohave', sans-serif;  /* Aplica la fuente "Mohave" */
+    font-weight: bold; /* Hace el título en negrita */
+    background-color: #00A2E2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Ajuste de padding */
+    border-radius: 5px; /* Redondeo de bordes */
+    display: inline-block; /* Permite que el rectángulo sea ajustado al tamaño del texto */
+}
+
+.contenitore_texto_reverse3 p {
+    font-family: 'Helvetica', sans-serif; /* Aplica Helvetica, y usa una fuente sans-serif si no está disponible */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    margin-bottom: 20px; /* Añade espacio entre los párrafos */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+    margin-right: 30%;
+}
+
+
+/* Estilo para el texto adicional, que actúa como un botón */
+.texto_adicional3 {
+    font-family: 'Helvetica', sans-serif; /* Asegura la misma fuente */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #B23251; /* Color inicial del texto */
+    margin-top: 5px; /* Espacio por encima del texto adicional */
+    cursor: pointer; /* Hace que el cursor sea un puntero para indicar que es clickeable */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: inline-block; /* Para que sea tratado como un bloque de contenido, si se quiere aplicar padding */
+}
+
+/* Estilo cuando se pasa el mouse por encima (hover) */
+.texto_adicional3:hover {
+    color: #9e1f3d; /* Un color más oscuro que el color inicial */
+}
+
+
+
+.image_section_reverse3 img {
+    max-width: 60%; /* La imagen ocupa el 100% del ancho disponible */
+    width: 100%; /* La imagen ocupa el 100% del ancho disponible */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Cubre el contenedor sin deformar la imagen */
+    padding: 0; /* Elimina el padding */
+    display: block; /* Elimina el espacio blanco debajo de la imagen */
+    box-sizing: border-box; /* Evita el desbordamiento por el padding */
+    border-radius: 25px; /* Bordes redondeados con un radio de 25px */
+    margin-left: 35%; /* Mueve la imagen hacia la derecha */
+}
+
+
+
+/* Media Query para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .info_contenitore_reverse3 {
+        grid-template-columns: 1fr; /* Los elementos se apilan en una sola columna */
+        padding: 2%; /* Agrega un pequeño padding en pantallas pequeñas */
+    }
+
+    .image_section_reverse3 img {
+        max-width: 100%; /* Asegura que la imagen ocupe el 100% del ancho disponible */
+        object-fit: contain; /* La imagen se ajusta sin recortarse */
+    }
+
+    .contenitore_texto_reverse3 {
+        padding: 0 10%; /* Ajusta el padding si es necesario */
+    }
+
+    .title_1_reverse3 {
+        font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .contenitore_texto_reverse3 p {
+        font-size: 0.9rem; /* Ajusta el tamaño del texto en pantallas más pequeñas */
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* Footer Section */
+
+.footer {
+    display: flex; /* Usamos flexbox para alinear los elementos */
+    justify-content: space-between; /* Alinea los elementos hacia los extremos */
+    padding: 1% 6%; /* Ajusta el padding del footer */
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #817E7E; /* Color de fondo del footer */
+    color: rgb(0, 0, 0); /* Color del texto */
+}
+
+
+.footer_text {
+    font-family: 'Mohave', sans-serif; /* Fuente Mohave */
+    font-weight: 700; /* Negrita */
+    width: 100%; /* Asegura que el texto ocupe el ancho completo disponible */
+    padding: 0 0.5%; /* Ajusta el padding para que no toque los bordes */
+    font-size: 1.5rem;
+    display: flex; /* Usamos flexbox dentro de footer_text */
+    justify-content: space-end; /* Para separar los textos dentro de la caja */
+}
+
+/* Para alinear el primer texto a la izquierda */
+.footer_text p:first-child {
+    text-align: left; /* Alineación a la izquierda */
+    flex: 1; /* Hace que este texto ocupe todo el espacio disponible */
+}
+
+/* Para los otros dos textos (con los márgenes) */
+.footer_text p:nth-child(2), .footer_text p:nth-child(3) {
+    margin-left: 10px; /* Espacio entre el segundo y tercer texto */
+    margin-right: 3%;
+}
+
+
+
+/* Media Query para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Cambia la disposición a columna en pantallas más pequeñas */
+        text-align: center; /* Centra el texto en pantallas pequeñas */
+        align-items: center; /* Centra los elementos horizontalmente */
+        justify-content: center; /* Alinea los elementos verticalmente */
+        height: auto; /* Asigna una altura para el footer */
+    }
+
+    .footer_text {
+        padding: 0 5%; /* Ajusta el padding para pantallas pequeñas */
+        font-size: 1rem; /* Reduce el tamaño del texto en pantallas pequeñas */
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-align: center; /* Centra el texto para pantallas pequeñas */
+        gap: 10px; /* Ajusta el espacio entre los textos en pantallas pequeñas */
+    }
+
+    .footer_text p:first-child {
+        text-align: center; /* Centra el primer texto también en pantallas pequeñas */
+    }
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+/* pagina de los 4 parques */
+
+
+/* Contenedor de las imágenes (2 columnas, 2 filas) */
+.image-links-container {
+    display: grid; /* Usamos grid para organizar las imágenes */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de igual tamaño */
+    grid-template-rows: repeat(2, auto); /* 2 filas, con altura automática según el contenido */
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-items: center; /* Centra las imágenes dentro de las celdas */
+    padding: 20px; /* Padding para que no toquen los bordes */
+    max-width: 80%; /* Establece un ancho máximo del 80% de la página */
+    margin: 5% auto; /* Centra el contenedor en la página */
+    justify-content: center; /* Asegura que el grid se centre en la página */
+}
+
+/* Estilo de cada imagen */
+.image-link img {
+    width: 100%; /* Hace que la imagen ocupe el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 25px; /* Opcional: bordes redondeados */
+    transition: transform 0.3s ease; /* Efecto al pasar el mouse */
+    max-width: 700px; /* Asegura que las imágenes no se agranden demasiado */
+    margin: 2%;
+}
+
+/* Efecto cuando pasas el mouse sobre las imágenes */
+.image-link img:hover {
+    transform: scale(1.05); /* Aumenta un poco el tamaño de la imagen */
+}
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+/* pagina actividades */
+
+
+
+/* Bloque con dos imágenes a la izquierda y texto a la derecha */
+.info_contenitore_tex_dere {
+    display: flex; /* Usamos flexbox para organizar los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 50px; /* Espacio entre las columnas */
+    padding: 2% 20%; /* Espacio alrededor */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Contenedor de las imágenes (apiladas verticalmente) */
+.image_section_izq {
+    display: inline-flex; /* Usamos inline-flex para que el contenedor se ajuste al tamaño de las imágenes */
+    flex-direction: column; /* Coloca las imágenes en columna */
+    gap: 2vw ; /* Espacio entre las imágenes */
+    align-items: center; /* Centra las imágenes dentro del contenedor */
+    justify-content: flex-start; /* Alinea las imágenes hacia el inicio */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten automáticamente en el contenedor */
+}
+
+/* Estilo de las imágenes */
+.image_section_izq img {
+    width: 100%; /* Las imágenes ocuparán el 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: contain; /* Asegura que las imágenes no se deformen */
+    border-radius: 25px; /* Bordes redondeados */
+    margin: 0; /* Elimina cualquier margen adicional */
+    padding: 0; /* Elimina cualquier padding */
+    max-width: 500px; /* Limita el tamaño máximo de las imágenes para que no crezcan más de lo necesario */
+}
+
+/* Contenedor de texto */
+.contenitore_texto_dere {
+    flex: 1; /* Ocupa el otro 50% del contenedor */
+    padding: 0 20px; /* Reduce el padding a los lados */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Título */
+.title_1_dere {
+    font-size: 2.5rem; /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+    font-family: 'Mohave', sans-serif;  /* Aplica la fuente "Mohave" */
+    font-weight: bold; /* Hace el título en negrita */
+    background-color: #00A2E2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Ajuste de padding */
+    border-radius: 5px; /* Redondeo de bordes */
+    display: inline-block; /* Ajusta el tamaño del fondo al tamaño del texto */
+}
+
+/* Párrafo */
+.contenitore_texto_dere p {
+    font-family: 'Helvetica', sans-serif; /* Aplica Helvetica */
+    font-size: 1.1rem; /* Ajusta el tamaño del texto */
+    margin-bottom: 10px; /* Reduce el espacio entre el párrafo y el enlace */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Estilo para el enlace */
+.texto_adicional {
+    font-family: 'Helvetica', sans-serif; /* Fuente para el enlace */
+    font-size: 1rem; /* Ajuste del tamaño de fuente */
+    color: #B23251; /* Color del texto */
+    margin-top: 5px; /* Espacio por encima del enlace */
+    cursor: pointer; /* Hace que el cursor se convierta en puntero */
+    text-decoration: none; /* Elimina el subrayado */
+    display: inline-block; /* Para aplicar padding */
+}
+
+/* Efecto hover sobre el enlace */
+.texto_adicional:hover {
+    color: #9e1f3d; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .info_contenitore_tex_dere {
+        flex-direction: column; /* Apila los elementos en una columna */
+        padding: 2%; /* Añade padding en pantallas pequeñas */
+    }
+
+    .image_section_izq img {
+        max-width: 100%; /* Asegura que la imagen ocupe el 100% del ancho disponible */
+        object-fit: contain; /* La imagen se ajusta sin recortarse */
+    }
+
+    .contenitore_texto_dere {
+        padding: 0 10%; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .title_1_dere {
+        font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .contenitore_texto_dere p {
+        font-size: 1rem; /* Ajusta el tamaño del párrafo en pantallas pequeñas */
+    }
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* Bloque con texto a la izquierda e imágenes a la derecha */
+.info_contenitore_tex_izq {
+    display: flex; /* Usamos flexbox para organizar los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 50px; /* Espacio entre las columnas */
+    padding: 2% 20%; /* Espacio alrededor */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si el espacio es pequeño */
+}
+
+/* Contenedor de las imágenes (apiladas verticalmente) */
+.image_section_dere {
+    display: inline-flex; /* Usamos inline-flex para que el contenedor se ajuste al tamaño de las imágenes */
+    flex-direction: column; /* Coloca las imágenes en columna */
+    gap: 2vw; /* Espacio entre las imágenes */
+    align-items: center; /* Centra las imágenes dentro del contenedor */
+    justify-content: flex-start; /* Alinea las imágenes hacia el inicio */
+}
+
+/* Estilo de las imágenes */
+.image_section_dere img {
+    width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: contain; /* Asegura que las imágenes no se deformen */
+    border-radius: 25px; /* Bordes redondeados */
+    margin: 0; /* Elimina cualquier margen adicional */
+    padding: 0; /* Elimina cualquier padding */
+    max-width: 450px; /* Limita el tamaño máximo de las imágenes para que no crezcan más de lo necesario */
+}
+
+/* Contenedor de texto */
+.contenitore_texto_izq {
+    flex: 1; /* Ocupa el otro 50% del contenedor */
+    padding: 0 20px; /* Reduce el padding a los lados */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Título */
+.title_1_izq {
+    font-size: 2.5rem; /* Ajuste de tamaño de fuente */
+    margin-bottom: 10px; /* Espaciado entre el título y el texto */
+    font-family: 'Mohave', sans-serif;  /* Aplica la fuente "Mohave" */
+    font-weight: bold; /* Hace el título en negrita */
+    background-color: #00A2E2; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Ajuste de padding */
+    border-radius: 5px; /* Redondeo de bordes */
+    display: inline-block; /* Ajusta el tamaño del fondo al tamaño del texto */
+}
+
+/* Párrafo */
+.contenitore_texto_izq p {
+    font-family: 'Helvetica', sans-serif; /* Aplica Helvetica */
+    font-size: 1.1rem; /* Ajusta el tamaño del texto */
+    margin-bottom: 10px; /* Reduce el espacio entre el párrafo y el enlace */
+    line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Estilo para el enlace */
+.texto_adicional {
+    font-family: 'Helvetica', sans-serif; /* Fuente para el enlace */
+    font-size: 1rem; /* Ajuste del tamaño de fuente */
+    color: #B23251; /* Color del texto */
+    margin-top: 5px; /* Espacio por encima del enlace */
+    cursor: pointer; /* Hace que el cursor se convierta en puntero */
+    text-decoration: none; /* Elimina el subrayado */
+    display: inline-block; /* Para aplicar padding */
+}
+
+/* Efecto hover sobre el enlace */
+.texto_adicional:hover {
+    color: #9e1f3d; /* Color más oscuro al pasar el mouse */
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .info_contenitore_tex_izq {
+        flex-direction: column; /* Apila los elementos en una columna */
+        padding: 2%; /* Añade padding en pantallas pequeñas */
+    }
+
+    .image_section_dere img {
+        max-width: 100%; /* Asegura que la imagen ocupe el 100% del ancho disponible */
+        object-fit: contain; /* La imagen se ajusta sin recortarse */
+    }
+
+    .contenitore_texto_izq {
+        padding: 0 10%; /* Ajusta el padding para pantallas pequeñas */
+    }
+
+    .title_1_izq {
+        font-size: 1.5rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .contenitore_texto_izq p {
+        font-size: 1rem; /* Ajusta el tamaño del párrafo en pantallas pequeñas */
+    }
+}
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* pagina fauna y flora */
+
+
+/* Contenedor principal */
+.info_contenitore {
+    padding: 2% 20%; /* Espaciado alrededor */
+    display: flex;
+    flex-direction: column; /* Apilar los elementos en columna */
+    gap: 20px; /* Espaciado entre los elementos */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    box-sizing: border-box;
+}
+
+/* Contenedor del texto */
+.contenitore_texto {
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* Estilo para el título */
+.title {
+    font-size: 2.5rem; /* Tamaño de fuente */
+    font-family: 'Mohave', sans-serif;
+    font-weight: bold;
+    background-color: #00A2E2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px; /* Espaciado entre el título y el párrafo */
+}
+
+/* Estilo para el texto justificado */
+.texto {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-align: justify; /* Justifica el texto */
+    margin-bottom: 20px; /* Espaciado debajo del texto */
+}
+
+/* Contenedor de imágenes */
+.contenitore_imagenes {
+    display: flex; /* Alinea las imágenes en línea */
+    gap: 20px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centra las imágenes en el contenedor */
+}
+
+/* Cada imagen dentro del contenedor */
+.image_item {
+    flex: 1; /* Las imágenes ocupan espacio igual */
+    max-width: 45%; /* Limita el tamaño máximo de cada imagen */
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro de su contenedor */
+}
+
+/* Estilo de las imágenes */
+.image_item img {
+    width: 100%; /* Las imágenes ocupan el 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin perder su aspecto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Media Queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .info_contenitore {
+        padding: 2%; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .contenitore_imagenes {
+        flex-direction: column; /* Las imágenes se apilan verticalmente */
+        gap: 10px; /* Reduce el espacio entre las imágenes */
+    }
+
+    .image_item {
+        max-width: 100%; /* Las imágenes ocupan el 100% del contenedor */
+    }
+
+    .title {
+        font-size: 1.8rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .texto {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+/* Estilo para el título final */
+.texto_finale {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 0 20px; /* Espacio a la izquierda y derecha para no estar pegado al borde */
+    font-size: 1.8rem; /* Tamaño de fuente del título */
+    font-weight: bold; /* Pone el título en negrita */
+    color: #333; /* Color del texto */
+    margin-top: 5%; /* Espacio superior */
+    margin-left: 3%;
+}
+
+/* Opcional: Puedes añadir un pequeño estilo de separación o decoración */
+.texto_finale p {
+    border-left: 4px solid #00A2E2; /* Una pequeña barra a la izquierda */
+    padding-left: 10px; /* Espacio entre la barra y el texto */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+/* bloque final */
+
+
+/* Estilo para el bloque final */
+.bloque_final {
+    padding: 5% 10%; /* Espaciado alrededor del bloque */
+    text-align: center; /* Centra el texto en el bloque */
+}
+
+/* Contenedor de las imágenes */
+.imagen_contenedor_final {
+    display: flex; /* Usamos flexbox para alinear las imágenes */
+    justify-content: space-between; /* Separa las imágenes de manera uniforme */
+    gap: 15px; /* Reducido el espaciado entre las imágenes */
+    flex-wrap: wrap; /* Asegura que se ajusten a pantallas más pequeñas */
+}
+
+/* Cada imagen con su título y subtítulo */
+.imagen_item_final {
+    flex: 1; /* Cada imagen ocupará el mismo espacio */
+    max-width: 30%; /* Limita el tamaño de cada imagen */
+    text-align: center; /* Centra el texto debajo de cada imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto pulsante */
+    padding: 10px; /* Espaciado interno para evitar que el contenido se quede pegado a los bordes */
+}
+
+/* Estilo de las imágenes */
+.imagen_item_final img {
+    width: 100%; /* Las imágenes ocupan todo el contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin deformarse */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Transición para el efecto pulsante */
+}
+
+/* Efecto hover para la imagen */
+.imagen_item_final:hover img {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la imagen */
+}
+
+/* Estilo para el título de cada imagen */
+.titulo_imagen_final {
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    font-family: 'Mohave', sans-serif;
+    font-weight: bold;
+    margin-top: 20px; /* Más espacio entre la imagen y el título */
+    color: #333; /* Color del título */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición para el cambio de tamaño y color */
+    padding: 0; /* Elimina cualquier padding adicional */
+    background: none; /* Elimina el fondo del título */
+}
+
+/* Efecto hover para el título */
+.titulo_imagen_final:hover {
+    color: #00A2E2; /* Cambia el color del título cuando el mouse pasa por encima */
+    transform: scale(1.1); /* Hace que el título crezca ligeramente */
+}
+
+/* Estilo para el subtítulo de cada imagen */
+.subtitulo_imagen_final {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 1rem; /* Tamaño del subtítulo */
+    color: #777; /* Color gris para el subtítulo */
+    margin-top: 3px; /* Reducido el espacio entre el título y el subtítulo */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transición para el cambio de tamaño y color */
+}
+
+/* Efecto hover para el subtítulo */
+.subtitulo_imagen_final:hover {
+    color: #B23251; /* Cambia el color del subtítulo cuando el mouse pasa por encima */
+    transform: scale(1.05); /* Hace que el subtítulo crezca ligeramente */
+}
+
+/* Efecto hover para el contenedor de la imagen */
+.imagen_item_final:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del contenedor cuando el mouse pasa por encima */
+    box-shadow: none; /* Elimina la sombra al pasar el mouse */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .imagen_contenedor_final {
+        flex-direction: column; /* Las imágenes se apilan en una columna */
+        gap: 10px; /* Reduce el espacio entre las imágenes */
+    }
+
+    .imagen_item_final {
+        max-width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+    }
+
+    .titulo_imagen_final {
+        font-size: 1.2rem; /* Reduce el tamaño del título en pantallas pequeñas */
+    }
+
+    .subtitulo_imagen_final {
+        font-size: 0.9rem; /* Ajusta el tamaño del subtítulo en pantallas pequeñas */
+    }
+}
