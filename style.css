@@ -1,0 +1,1309 @@
+body {
+    font-size: 16px;
+    color: #222;
+    min-width: 150px; 
+    margin: 0; /* Ajusta esto según la altura de tu navbar */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que padding no se sume al ancho */
+    transition: padding-top 0.3s ease-in-out; /* Suaviza el cambio */
+}
+
+/* Herencia de box-sizing */
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        margin: 0 auto;
+        padding: 2rem 0;
+        box-sizing: border-box;
+    }
+}
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+/* Navbar Section */
+
+/* Estilo para el logo */
+
+.logo_navbar {
+    max-width: 180px; /* Ajusta el tamaño máximo del logo */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar{
+    height: 70px;
+    background: #262626;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    transition: top 0.3s ease-in-out;
+}
+
+/* Cambiar fuente en navbar */
+
+.nav-bar,
+.nav-bar a {
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+}
+
+
+.brand{
+    float: left;
+    position: absolute;
+    padding-left: 20px;
+    line-height: 70px;
+    font-size: 1.5em;
+}
+
+.brand a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 35px;
+    position: relative; /* para contener elementos absolutamente posicionados */
+}
+
+
+nav{
+    float: right;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    float: left;
+    position: relative;
+}
+
+nav ul li a{
+    display: block;
+    padding: 0 20px;
+    line-height: 70px;
+    background: #262626;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul li a:hover{
+    background: #3B3C11;
+    color: #fff;
+}
+
+nav ul li a:not(:only-child):after{
+    content: '▼';
+    padding-left: 5px;
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a{
+    padding: 15px;
+    line-height: 20px;
+}
+
+.nav-dropdown{
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+.nav-mobile{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 70px;
+    width: 70px;
+    z-index: 1002; /* más alto que .nav-bar */
+}
+
+#nav-toggle{
+    position: relative;
+    left: 18px;
+    top: 22px;
+    cursor: pointer;
+    padding: 10px 35px 15px 0px;
+    z-index: 1001; /* Asegura que esté encima de la navbar */
+    display: block; /* Asegura visibilidad */
+}
+
+#nav-toggle span,
+#nav-toggle span::before,
+#nav-toggle span::after{
+    position: absolute;
+    display: block;
+    content: '';
+    background: #fff;
+    height: 5px;
+    width: 35px;
+    transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span::before{
+    top: -10px;
+}
+
+#nav-toggle span::after{
+    bottom: -10px;
+}
+
+#nav-toggle.active span{
+    background-color: transparent;
+}
+
+#nav-toggle.active span::before, #nav-toggle.active span::after{
+    top: 0;
+}
+
+#nav-toggle.active span::before{
+    transform: rotate(45deg);
+}
+
+#nav-toggle.active span::after{
+    transform: rotate(-45deg);
+}
+
+
+/* pantallas pequeñas / móviles */
+
+@media only screen and (max-width: 768px) {
+
+    .nav-container{
+        padding: 0;
+    }
+
+    
+    .nav-mobile{
+        display: block;
+    }
+
+    nav{
+        width: 100%;
+    }
+
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000; /* Asegura que la barra esté encima */
+        transition: top 0.3s ease-in-out;
+    }
+
+
+    nav ul{
+        display: none;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+    nav ul li a{
+        padding: 15px;
+        line-height: 20px;
+        padding-left: 25%;
+    }
+
+
+    nav ul li ul li a{
+        padding-left: 30%;
+    }
+
+    .nav-dropdown{
+        position: static;
+        z-index: 1001; /* Asegura que el submenú esté por encima de todo */
+    }
+
+    .logo_navbar {
+        width: 150px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+        height: auto; /* Asegúrate de que el logo mantenga su proporción */
+    }
+
+    .brand {
+        position: relative;
+        float: left;
+        padding-left: 20px;
+        width: auto;
+        text-align: left;
+    }
+
+}
+
+/* pantallas grandes / escritorio */
+
+@media screen and (min-width: 769px){
+
+    .nav-list{
+        display: block; /* Mostrar por defecto en pantallas grandes */
+        background: #262626;
+        width: 100%;
+    }
+
+    nav ul li:hover > .nav-dropdown {
+        display: block;
+    }
+
+    .nav-dropdown {
+        position: absolute;
+        top: 70px; /* Mismo alto que la navbar */
+        left: 0;
+        background: #262626;
+        z-index: 9999;
+        display: none;
+    }
+
+    nav ul li {
+        position: relative;
+    }
+
+    nav ul li ul.nav-dropdown li {
+        float: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Pagina index, la principal */
+
+
+/* Portada principal Section */
+
+.info_copertina {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+  
+.image_copertina {
+    position: relative;
+    width: 100%;
+}
+  
+.image_copertina img {
+    width: 100%;
+    height: 100vh; /* Que ocupe toda la altura visible */
+    object-fit: cover;
+    display: block;
+}
+
+/* Variante horizontal para portada de página interna */
+.portada-horizontal .image_copertina img {
+    height: 60vh; /* más bajo que 100vh */
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 5;
+    padding: 1rem;
+    width: 90%;
+    max-width: 900px;
+    box-sizing: border-box;
+}
+
+.titulo_imagen {
+    font-family: 'Mohave', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    padding: 0.5em 1em;
+    background-color: rgba(59, 60, 17, 0.9); /* Fondo con transparencia */
+    color: white;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.subtitulo_imagen {
+    font-family: 'Helvetica', sans-serif;
+    font-size: clamp(14px, 2.5vw, 24px);
+    margin: 1rem auto 0;
+    color: white;
+    text-align: center;
+    max-width: 90%;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+
+    .titulo_imagen {
+        border-radius: 15px;
+        font-size: 2rem;
+    }
+
+    .subtitulo_imagen {
+        font-size: 1.2rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Texto introductorio debajo de la imagen */
+
+
+.intro_con_icono {
+    display: flex; /* Necesario para alinear imagen y texto */
+    align-items: flex-start; /* Alinea el ícono arriba del texto */
+    gap: 15px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1.2rem;
+    color: #222;
+    max-width: 800px;
+    margin: 2rem auto;
+    text-align: left;
+    padding: 0 70px;
+    line-height: 1.6;
+    box-sizing: border-box;
+}
+
+.pagina-flora .intro_con_icono {
+    margin: 6rem auto;
+}
+
+.pagina-attivita .intro_con_icono {
+    margin: 4rem auto;
+}
+
+.pagina-4p .intro_con_icono {
+    margin: 4.2rem auto;
+} 
+
+.pagina-dolomiti .intro_con_icono {
+    margin: 2.2rem auto;
+} 
+
+
+.icono_png {
+    width: 40px;
+    height: auto;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.intro_texto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espacio entre los párrafos */
+}
+
+.intro_subtitulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #111; /* opcional: más oscuro que el resto del texto */
+}
+
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .intro_con_icono {
+        flex-direction: column; /* Cambia a columna */
+        align-items: center;    /* Centra horizontalmente */
+        text-align: left;     /* Centra el texto */
+        font-size: 1rem;
+        padding: 0 20px 2rem 20px;
+        margin: 0 auto;
+    }
+
+    .icono_png {
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+
+    .pagina-flora .intro_con_icono {
+        margin: 1rem auto;
+    }
+
+    .pagina-attivita .intro_con_icono {
+        margin: 1rem auto;
+    }
+
+    .pagina-4p .intro_con_icono {
+        margin: 2rem auto;
+    } 
+    
+    .pagina-dolomiti .intro_con_icono {
+        margin: 1.5rem auto;
+    } 
+    
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+.section-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+
+    .section-wrapper {
+        margin: 0 auto;
+        padding: 2rem 0 4rem 0;
+        box-sizing: border-box;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px 2rem 20px; /* Padding de 20px a los lados */
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bloque Dolomiti y otros semejantes */
+
+
+
+.info-container-esplora {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    max-width: 1300px; /* Limita el ancho total para centrarlo mejor */
+    margin: 3rem auto; /* Centra el bloque en la página */
+}
+
+.image-section {
+    flex: 0 0 500px; /* Tamaño fijo más pequeño */
+    margin: 20px;
+    overflow: hidden; /* ← esto es clave */
+    border-radius: 20px; /* opcional, si querés bordes redondeados en la imagen misma */
+}
+
+.image-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* ← esta línea */
+}
+
+.text-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    text-align: left;
+}
+
+
+
+.title {
+    font-size: 2rem;
+    font-family: 'Mohave', sans-serif;
+    font-weight: bold;
+    background-color: #00A2E2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.text-section p,
+.text-centered p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.cta-button {
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    color: #B23251;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #B23251;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #B23251;
+    color: white;
+}
+
+.text-section:hover .cta-button {
+    background-color: #B23251;
+    color: white;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .info-container-esplora {
+        flex-direction: column;
+        align-items: stretch; /* 👈 Esto evita el centrado de contenido */
+        padding: 0 0 1rem 0;
+        gap: 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .text-section {
+        text-align: left;
+        margin: 0;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .image-section {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .image-section img {
+        width: 100%; /* Menor tamaño en móviles */
+        margin: 0 auto;
+    }
+    
+    .info-container-esplora .text-section {
+        order: 2;
+    }
+    
+    .info-container-esplora .image-section {
+        order: 1;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bloque Esplora i parchi index */
+
+
+
+.info-container-esplora_ind {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    gap: 2rem;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    max-width: 1300px; /* Limita el ancho total para centrarlo mejor */
+    margin: 3rem auto; /* Centra el bloque en la página */
+    padding: 0 6rem;
+}
+
+.image-section_ind {
+    flex: 0 0 500px; /* Tamaño fijo más pequeño */
+    margin: 20px;
+    overflow: hidden; /* ← esto es clave */
+    border-radius: 20px; /* opcional, si querés bordes redondeados en la imagen misma */
+}
+
+.image-section_ind img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease; /* ← esta línea */
+}
+
+
+
+.text-section_ind {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    text-align: left;
+}
+
+.title {
+    font-size: 2rem;
+    font-family: 'Mohave', sans-serif;
+    font-weight: bold;
+    background-color: #00A2E2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.text-section_ind p {
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.cta-button {
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    color: #B23251;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #B23251;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #B23251;
+    color: white;
+}
+
+.text-section:hover .cta-button {
+    background-color: #B23251;
+    color: white;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .info-container-esplora_ind {
+        flex-direction: column;
+        align-items: stretch; /* 👈 Esto evita el centrado de contenido */
+        padding: 0 0 1rem 0;
+        gap: 1rem;
+    }
+
+    .text-section_ind {
+        text-align: left;
+        margin: 0 40px 0 0;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .image-section_ind {
+        flex: 0 0 auto;
+        margin: 0;
+    }
+
+    .image-section_ind img {
+        width: 100%; /* Menor tamaño en móviles */
+        margin: 0 auto;
+    }
+    
+    .info-container-esplora_ind .text-section_ind {
+        order: 2;
+    }
+    
+    .info-container-esplora_ind .image-section_ind {
+        order: 1;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bloque centrados de actividad y flora y fauna */
+
+.info-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.text-centered {
+    max-width: 800px;
+    margin-bottom: 2rem;
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    text-align: center; /* Esto alinea cualquier elemento inline/inline-block al centro */
+}
+
+.images-row-centered {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Espacio entre imágenes */
+    flex-wrap: wrap; /* Esto permite que en pantallas pequeñas se acomoden en columna si no hay espacio */
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+
+.image-box-centered {
+    flex: 0 0 500px;
+    overflow: hidden; /* necesario para el efecto zoom */
+    border-radius: 20px;
+}
+
+.image-box-centered img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+
+.image-box-centered img:hover {
+    transform: scale(1.1); /* Zoom interno */
+}
+
+.text-centered .title {
+    display: inline-block; /* Esto ajusta el fondo al contenido */
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.text-centered .cta-button {
+    display: inline-block;
+    margin: 1.5rem auto 0 auto;
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+
+    .info-center {
+        padding: 3rem 1rem;
+    }
+
+
+    .images-row-centered {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .image-box-centered {
+        max-width: 100%;
+        flex: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+/* bloque 4 parques  */
+
+
+.image-collage {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.image-row {
+    display: flex;
+    gap: 20px;
+}
+
+.image-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    display: block;
+    text-decoration: none;
+    flex-grow: 1; /* Permite que los elementos crezcan para llenar el espacio */
+    flex-shrink: 1; /* Permite que se encojan si es necesario */
+    height: 300px; /* Altura fija para las imágenes */
+}
+
+.image-box.square {
+    flex-basis: 43%; /* Tamaño base aproximado para la cuadrada */
+}
+
+.image-box.rectangle {
+    flex-basis: 60%; /* Tamaño base aproximado para la rectangular */
+}
+
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.image-box:hover .content-wrapper {
+    transform: scale(1.05);
+}
+
+.content-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.image-box:hover img {
+    transform: scale(1.01);
+}
+
+/* Estilo del texto sobre las imágenes */
+.overlay-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    z-index: 2;
+    pointer-events: none;
+    max-width: 80%;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.titulo-generales {
+    text-align: left;
+    font-size: 1.8rem;
+    font-family: 'Mohave', sans-serif;
+    padding: 0 20px;
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .image-collage {
+        padding: 0 0 1rem 0;
+    }
+
+    .image-row {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .image-box {
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .image-box.square,
+    .image-box.rectangle {
+        flex-basis: auto; /* Reinicia el tamaño base en móviles */
+    }
+
+    .overlay-text {
+        font-size: 1.5rem;
+        padding: 6px 21px;
+        border-radius: 10px;
+        max-width: 250px;
+    }
+
+    .titulo-generales {
+        font-size: 1.6rem;
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+
+/* Bloque 3 parques */
+
+.dolomites-block .image-row {
+    display: flex;
+    justify-content: center; /* o directamente eliminá esta línea si el centrado no es necesario */
+    gap: 20px; /* o 4rem, según el valor que realmente querés */
+}
+
+/* Estilos generales para las cajas de imagen */
+.dolomites-block .image-box {
+    position: relative;
+    flex: 1;
+    height: 300px;  /* Altura fija para las imágenes */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Estilos para las imágenes */
+.dolomites-block .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Fila inferior con imagen centrada y tamaño reducido */
+.dolomites-block .image-row:last-child {
+    display: flex;
+    justify-content: center;  /* Centra la imagen en la fila inferior */
+}
+
+/* La imagen de la fila inferior tendrá un tamaño más pequeño */
+.dolomites-block .image-box.full {
+    flex: 0 0 50%;  /* Limitar el tamaño de la imagen */
+    max-width: 600px;  /* Limitar el ancho máximo */
+    height: 300px;  /* Mantener la misma altura */
+}
+
+/* Estilos adicionales para la fila superior */
+.dolomites-block .image-box.square {
+    flex: 1;
+}
+
+.dolomites-block .image-box.half {
+    flex: 1;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+
+/* Footer Section */
+
+.footer {
+    width: 100%;
+    background-color: #262626;
+    color: #ebebeb;
+    box-sizing: border-box;
+}
+
+.footer .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 20px;
+    box-sizing: border-box;
+}
+
+.footer_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-style: normal; /* <- Añade esto */
+    font-size: 1rem;
+    flex-wrap: wrap; /* Para que se acomode mejor en pantallas pequeñas */
+    gap: 20px;
+    padding: 0 40px;
+}
+
+.footer_text p {
+    margin: 0;
+    flex: 1;
+    text-align: left;
+}
+
+
+.footer_links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    cursor: pointer;
+    color: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+
+/* Media Query para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .footer_text {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer_text p {
+        text-align: center;
+        flex: none;
+        font-size: 1rem; 
+    }
+
+    .footer_links {
+        display: flex;
+        flex-direction: row; /* 👈 uno al lado del otro */
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .footer-link {
+        font-size: 1.3rem;
+        padding: 4px 8px;
+    }
+}
+
+

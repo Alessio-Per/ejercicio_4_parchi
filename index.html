@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ejercicio_4_parchi</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital,wght@0,300..700;1,300..700&amp;display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - Noto Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- Nav-bar -->
+
+    <div class="nav-bar">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="index.html"> 
+                    <img class="logo_navbar" src="imagini/altre-Imagine/logo_sitio.png" alt="site-name">
+                </a> 
+            </div>
+            <nav>
+                <div class="nav-mobile">
+                    <a href="#" id="nav-toggle">
+                        <span></span>
+                    </a>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="flora_fauna.html">Flora e Fauna</a></li>
+                    <li><a href="#">Parchi</a>
+                        <ul class="nav-dropdown">
+                            <li><a href="4parchi.html">Tutti i Parchi</a></li>
+                            <li><a href="dolomiti.html">Dolomiti Bellunesi</a></li>
+                            <li><a href="etna.html">Parco dell'Etna</a></li>
+                            <li><a href="pollino.html">Pollino</a></li>
+                            <li><a href="paradiso.html">Gran Paradiso</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="attivita.html">Attivita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <!------------------------------------------------------------->
+
+
+    <!-- copertina -->
+
+    <section class="info_copertina" id="home">
+        <div class="image_copertina">
+        <img src="imagini/dollomite/dolomiti oscuro2.png" alt="Parchi d’Italia">
+        <div class="overlay">
+            <h2 class="titulo_imagen">Parchi d’Italia</h2>
+        </div>
+        </div>
+    </section>
+
+    
+    <!------------------------------------------------------------->
+            
+
+    <div class="container">
+        <section class="info-container">
+
+            <!-- Texto introductorio debajo de la portada -->
+
+            <div class="intro_con_icono">
+                <img src="imagini/altre-Imagine/leaf.png" alt="Ícono hoja" class="icono_png">
+            
+                <div class="intro_texto">
+
+                    <p class="intro_subtitulo">Guida ai parchi nazionali, riserve naturali e aree protette.</p>
+
+                    <p>I parchi naturali italiani sono un tesoro di ecosistemi ricchi, paesaggi mozzafiato e unici legami tra uomo e ambiente.</p> 
+                    <p>Scopri flora, fauna e le storie che rendono speciale ogni angolo protetto del nostro Paese.</p>
+                </div>
+            </div>
+
+
+
+
+            <!-- Bloque Esplora i parchi -->
+
+            <section class="info-container-esplora_ind">
+                <div class="image-section_ind">
+                    <img src="imagini/etna/2.0.Notturno_etneo.jpg" alt="imagen a la derecha">
+                </div>
+                
+                <div class="text-section_ind">
+                    <h1 class="title">Esplora i parchi d’Italia</h1>
+                    <p>Biodiversità, paesaggi, tradizioni, natura, cultura.</p>
+                    <a href="4parchi.html" class="cta-button">Visualizza tutto →</a>
+                </div>
+            </section>
+
+
+
+
+            <!-- Bloque 4 parques -->
+            
+            <section class="image-collage section-wrapper">
+                <div class="titulo-generales">
+                    <h1 class="title-4p">Parchi italiani</h1> 
+                </div>
+
+                <!-- Fila superior -->
+                <div class="image-row">
+                    <a href="dolomiti.html" class="image-box square">
+                        <div class="content-wrapper">
+                            <div class="overlay-text">Parco Nazionale Dolomiti Bellunesi</div>
+                            <img src="imagini/dollomite/3.0_Parco_nazionale_Dolomiti_Bellunesi.jpg" alt="Imagen 1">
+                        </div>
+                    </a>
+                    <a href="etna.html" class="image-box rectangle">
+                        <div class="content-wrapper">
+                            <div class="overlay-text">Parco del'Etna</div>
+                            <img src="imagini/etna/3.0etna.jpg" alt="Imagen 2">
+                        </div>
+                    </a>
+                </div>
+            
+
+                <!-- Fila inferior (invertido manualmente) -->
+                 
+                <div class="image-row">
+                    <a href="pollino.html" class="image-box rectangle">
+                        <div class="content-wrapper">
+                            <div class="overlay-text">Parco Nazionale del Pollino</div>
+                            <img src="imagini/pollino/3.0Il_versante_meridionale_di_Monte_Pollino,_Pollinello_e_Serra_Dolcedorme_al_tramonto.jpg" alt="Imagen 3">
+                        </div>
+                    </a>
+                    <a href="paradiso.html" class="image-box square">
+                        <div class="content-wrapper">
+                            <div class="overlay-text">Parco Nazionale del Gran Pradiso</div>
+                            <img src="imagini/gran paradiso/3.0Vallata_alpina_nel_Parco_Nazionale_del_Gran_Paradiso.jpg" alt="Imagen 4">
+                        </div>
+                    </a>
+                </div>
+            </section>
+            
+
+
+
+
+            <!-- Bloque Flora y fauna -->
+
+            <section class="info-container-esplora_ind">
+                <div class="text-section_ind">
+                    <h1 class="title">Flora e Fauna</h1>
+                    <p>Una panoramica sulla flora e fauna dei principali parchi italiani...</p>
+                    <a href="flora_fauna.html" class="cta-button">Visualizza tutto →</a>
+                </div>
+            
+                <div class="image-section_ind">
+                    <img src="imagini/etna/2.0.Vulpes_vulpes_laying_in_snow.jpg" alt="imagen">
+                </div>
+            </section>
+          
+            
+
+
+
+            <!-- Bloque Attività -->
+
+            <section class="info-container-esplora_ind">
+                <div class="image-section_ind">
+                    <img src="imagini/gran paradiso/2.0.Fountain_in_Gran_Paradiso_National_Park.jpg" alt="imagen a la derecha">
+                </div>
+                
+                <div class="text-section_ind">
+                    <h1 class="title">Attività</h1>
+                    <p>Trekking panoramici, birdwatching, vulcani attivi e sentieri immersi nella biodiversità di monti e foreste.</p>
+                    <a href="attivita.html" class="cta-button">Visualizza tutto →</a>
+                </div>
+            </section>
+
+        </section>
+    </div>
+       
+    
+
+    <!------------------------------------------------------------->
+
+
+    
+    <!-- Sección del footer -->
+
+    <footer class="footer">
+        <div class="container">
+          <div class="footer_text">
+                <p>© Copyright 2025 Parchi d’Italia. Tutti i diritti riservati.</p>
+                <div class="footer_links">
+                    <span class="footer-link">Privacy</span>
+                    <span class="footer-link">Chi siamo</span>
+                </div>
+          </div>
+        </div>
+    </footer>
+      
+      
+    <!------------------------------------------------------------->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="js/carrusel.js" defer></script>
+
+</body>    
